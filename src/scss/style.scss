@@ -1,5 +1,8 @@
 $dark_color: #0C0C0C;
 $light_color: #D3D3D3;
+$active_color: #929496;
+
+@import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css");
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -56,9 +59,6 @@ $light_color: #D3D3D3;
 
 .miners {
     background: url('../img/background/cloud-storage-background-remixed-from-public-domain-by-nasa22\ 1.jpg') top center / contain no-repeat;
-    // padding-top: 210px;
-    // margin-bottom: 80px;
-    // max-width: 690px;
     padding: 224px 0;
 
     &_title {
@@ -116,15 +116,11 @@ $light_color: #D3D3D3;
 
     &_title {
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 36px;
         text-align: center;
         color: #000000;
         margin-bottom: 40px;
-
-        span {
-            font-weight: 700;
-        }
     }
 
     &_wrapper {
@@ -162,7 +158,6 @@ $light_color: #D3D3D3;
             margin-bottom: 4px;
         }
         
-
         &_descr {
             font-style: normal;
             font-weight: normal;
@@ -191,6 +186,7 @@ $light_color: #D3D3D3;
     &_wrapper {
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
     }
 
     &_item {
@@ -215,28 +211,73 @@ $light_color: #D3D3D3;
 }
 
 .seles {
-    margin-bottom: 80px;
+    padding: 80px 0 28px 0;
+    position: relative;
+
+    .container {
+        position: relative;
+    }
+    
+    &_slider {
+        position: relative;
+        overflow: hidden;
+        width: 1190px;
+        height: 860px;
+        margin-bottom: 72px;
+    }
+
+    &_arrow-left {
+        position: absolute;
+        top: 50%;
+        font-size: 54px;
+        border: none;
+        left: -45px;
+        color: $light_color;
+        background: none;
+    }
+
+    &_arrow-right {
+        position: absolute;
+        top: 50%;
+        font-size: 54px;
+        border: none;
+        right: -45px;
+        color: $light_color;
+        background: none;
+    }
+
+    .arrow-active {
+        color: $active_color;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    &_wrapper {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        width: 3590px;
+        padding-bottom: 10px;
+    }
 
     &_title {
         font-style: normal;
-        font-weight: 500;
+        font-weight: 400;
         font-size: 36px;
         text-align: center;
         color: #000000;
         margin-bottom: 40px;
-        
-        span {
-            font-weight: 700;
-        }
     }
 
     &_item {
-        margin: 0 auto;
         padding: 42px 40px 40px 40px;
         background: $light_color;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         width: 570px;
+        height: 764px;
 
         &_img {
             display: block;
@@ -259,26 +300,44 @@ $light_color: #D3D3D3;
                 font-size: 16px;
                 line-height: 32px;
                 color: #000000;
-                
-                span {
-                    font-weight: 600;
-                }
             }
+        }
 
+        &:nth-child(2n+1) {
+            margin-top: 80px;
         }
     }
 
-    .col-6:nth-child(odd) {
-        margin-top: 120px;
+    &_slider-nav {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        width: 59px;
+
+        &_item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 14px;
+            height: 14px;
+            border: 1px solid $active_color;
+            border-radius: 50%;
+        }
+
+        .active {
+            div {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: $active_color;
+            }
+        }
     }
 }
 
 .question {
-    min-height: 448px;
     background: url('../img/background/blockchain-technology-background-in-gradient-blue22\ 1.jpg') 50% 0/ cover no-repeat;
     padding: 70px 0;
-    margin-bottom: 80px;
-    border: 1px solid #000;
 
     &_title {
         font-style: normal;
@@ -294,8 +353,6 @@ $light_color: #D3D3D3;
     }
 
     &_subtitle {
-        margin: 0 auto;
-        width: 736px;
         font-style: normal;
         font-weight: normal;
         font-size: 18px;
@@ -308,7 +365,9 @@ $light_color: #D3D3D3;
     &_form {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
+        margin: 0 auto;
+        width: 970px;
 
         input {
             border: none;
@@ -321,10 +380,6 @@ $light_color: #D3D3D3;
             color: #FFFFFF;
             padding: 0 10px 4px 10px;
             margin-bottom: 40px;
-
-            &:first-child {
-                margin-right: 30px;
-            }
             
             &:nth-child(3){
                 width: 970px;
@@ -333,9 +388,12 @@ $light_color: #D3D3D3;
         }
 
         &_btn {
+            width: 200px;
+            height: 36px;
+            margin: 0 auto;
             font-style: normal;
-            font-weight: bold;
-            font-size: 18px;
+            font-weight: 400;
+            font-size: 16px;
             text-align: center;
             color: #FFFFFF;
         }
@@ -343,10 +401,11 @@ $light_color: #D3D3D3;
 }
 
 .contacts {
-    margin-bottom: 80px;
+    padding: 80px 0;
 
     &_main {
-        width: 210px;
+        width: 330px;
+        padding-left: 32px;
 
         &_phone {
             margin-bottom: 22px;
@@ -354,14 +413,17 @@ $light_color: #D3D3D3;
 
         a {
             display: block;
+            position: relative;
             font-style: normal;
-            font-weight: 500;
+            font-weight: 400;
             font-size: 18px;
             color: #000000;
             text-decoration: none;
 
             i {
-                margin-right: 14px;
+                top: 5px;
+                left: -24px;
+                position: absolute;
             }
         }
     }
@@ -395,11 +457,7 @@ $light_color: #D3D3D3;
     padding: 22px 0;
 
     &_info {
-        margin-right: 50px;
         text-decoration: none;
-    }
-
-    a {
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -407,4 +465,4 @@ $light_color: #D3D3D3;
     }
 }
 
-// @import "media";
+@import "media";
