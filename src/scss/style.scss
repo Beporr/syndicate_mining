@@ -1,0 +1,442 @@
+$dark_color: #0C0C0C;
+$light_color: #D3D3D3;
+
+* {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1170px;
+}
+
+.button {
+    width: 294px;
+    height: 40px;
+    border: 1px solid #FFFFFF;
+    background: none;
+    box-sizing: border-box;
+    border-radius: 30px;
+    text-align: center;
+    padding: 6px 0;
+}
+
+.header {
+    position: absolute;
+    padding-top: 30px;
+    width: 100%;
+
+    &_phone {
+        display: block;
+        margin: 4px 0;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        text-align: right;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        text-decoration: none;
+    }
+}
+
+.miners {
+    background: url('../img/background/cloud-storage-background-remixed-from-public-domain-by-nasa22\ 1.jpg') top center / contain no-repeat;
+    min-height: 691px;
+    padding-top: 210px;
+    margin-bottom: 80px;
+
+    &_title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 64px;
+        line-height: 72px;
+        color: #FFFFFF;
+        margin-bottom: 24px;
+    }
+
+    &_subtitle{
+        font-style: normal;
+        font-weight: normal;
+        font-size: 24px;
+        color: #FFFFFF;
+        margin-bottom: 36px;
+    }
+
+    &_btn {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        color: #FFFFFF; 
+    }
+}
+
+.equipment {
+    position: relative;
+    height: 375px;
+    padding-top: 71px;
+    margin-bottom: 80px;
+
+    &_title{
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        color: #000000;
+        margin-bottom: 24px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &_descr {
+        p {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 32px;
+            color: #000000;
+        }
+    }
+
+    &_img {
+        position: absolute;
+        top: 0;
+        left: 52%;
+        z-index: -2;
+    }
+
+    &_rectangle {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 366px;
+        height: 320px;
+        background-color: $light_color;
+        z-index: -1;
+    }
+}
+
+.advantage {
+    margin-bottom: 80px;
+
+    .col-md-12 {
+        padding: 0;
+    }
+
+    &_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 40px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &_wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &_item {
+        position: relative;
+        top: 0;
+        width: 230px;
+        height: 230px;
+        background: url('../img/background/icon_background.svg') center center / contain no-repeat;
+        padding: 31px 40px;
+
+        &:nth-child(2n) {
+            top: 115px;
+        }
+
+        &:last-child {
+            top: 0;
+        }
+
+        &_icon {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 4px;
+        }
+        
+
+        &_descr {
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 24px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.form-order {
+    background-color: $dark_color;
+    margin-bottom: 80px;
+    height: 400px;
+    padding: 72px 0;
+
+    &_descr {
+        margin-top: 46px;
+
+        .text-italic {
+            font-family: 'Roboto', sans-serif;
+            font-style: italic;
+            font-weight: 200;
+            font-size: 36px;
+            color: #FFFFFF;
+        }
+
+        p {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 36px;
+            line-height: 48px;
+            color: #FFFFFF;   
+            
+            span {
+                font-weight: 700;
+            }
+        }
+    }
+
+    &_form {
+        margin-top: 46px;
+
+        input {
+            width: 100%;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 16px;
+            color: #FFFFFF;
+            background: none;
+            border: none;
+            border-bottom: 1px solid #fff;
+            padding: 0 10px 4px 10px;
+
+            &:first-child {
+                margin-bottom: 24px;
+            }
+        }
+
+        &_btn {
+            display: block;
+            width: 170px;
+            height: 40px;
+            margin: 36px auto 0 auto;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+    }
+
+    &_logo {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.seles {
+    margin-bottom: 80px;
+
+    &_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 40px;
+        
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &_item {
+        margin: 0 auto;
+        padding: 42px 40px 40px 40px;
+        background: $light_color;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        width: 570px;
+
+        &_img {
+            display: block;
+            margin: 0 auto;
+            margin-bottom: 26px;
+        }
+
+        &_title {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 24px;
+            color: #000000;
+            margin-bottom: 15px;  
+        }
+
+        &_descr {
+            p {
+                font-style: normal;
+                font-weight: normal;
+                font-size: 16px;
+                line-height: 32px;
+                color: #000000;
+                
+                span {
+                    font-weight: 600;
+                }
+            }
+
+        }
+    }
+
+    .col-6:nth-child(odd) {
+        margin-top: 120px;
+    }
+}
+
+.question {
+    min-height: 448px;
+    background: url('../img/background/blockchain-technology-background-in-gradient-blue22\ 1.jpg') 50% 0/ cover no-repeat;
+    padding: 70px 0;
+    margin-bottom: 80px;
+    border: 1px solid #000;
+
+    &_title {
+        font-style: normal;
+        font-weight: 500;
+        font-size: 36px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: 24px;
+
+        span {
+            font-weight: 700;
+        }
+    }
+
+    &_subtitle {
+        margin: 0 auto;
+        width: 736px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: #FFFFFF;
+        margin-bottom: 36px;
+    }
+
+    &_form {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        input {
+            border: none;
+            border-bottom: 1px solid $light_color;
+            width: 470px;
+            background: none;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            color: #FFFFFF;
+            padding: 0 10px 4px 10px;
+            margin-bottom: 40px;
+
+            &:first-child {
+                margin-right: 30px;
+            }
+            
+            &:nth-child(3){
+                width: 970px;
+                margin-bottom: 44px;
+            }
+        }
+
+        &_btn {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            text-align: center;
+            color: #FFFFFF;
+        }
+    }
+}
+
+.contacts {
+    margin-bottom: 80px;
+
+    &_main {
+        width: 210px;
+
+        &_phone {
+            margin-bottom: 22px;
+        }
+
+        a {
+            display: block;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 18px;
+            color: #000000;
+            text-decoration: none;
+
+            i {
+                margin-right: 14px;
+            }
+        }
+    }
+
+    &_social {
+        display: flex;
+        
+        &_item {
+            display: block;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: $dark_color;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            margin-right: 30px;
+
+
+            i {
+                color: #fff;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.footer {
+    background-color: $dark_color;
+    padding: 22px 0;
+
+    &_info {
+        margin-right: 50px;
+        text-decoration: none;
+    }
+
+    a {
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        color: #FFFFFF;
+    }
+}
+
+@import "media";
