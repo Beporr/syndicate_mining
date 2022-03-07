@@ -272,7 +272,7 @@ $active_color: #929496;
     }
 
     &_item {
-        padding: 42px 40px 40px 40px;
+        padding: 42px 40px 20px 40px;
         background: $light_color;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
@@ -300,7 +300,21 @@ $active_color: #929496;
                 font-size: 16px;
                 line-height: 32px;
                 color: #000000;
+                margin-bottom: 11px;
             }
+        }
+
+        &_btn {
+            width: 200px;
+            height: 36px;
+            margin: 0 auto;
+            border: 1px solid #000000;
+            box-sizing: border-box;
+            border-radius: 42px;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            color: #000000;
         }
 
         &:nth-child(2n+1) {
@@ -408,7 +422,11 @@ $active_color: #929496;
         padding-left: 32px;
 
         &_phone {
-            margin-bottom: 22px;
+            margin-bottom: 17px;
+        }
+
+        &_email {
+            margin-bottom: 17px;
         }
 
         a {
@@ -421,9 +439,10 @@ $active_color: #929496;
             text-decoration: none;
 
             i {
-                top: 5px;
-                left: -24px;
+                top: 3px;
+                left: -30px;
                 position: absolute;
+                font-size: 24px;
             }
         }
     }
