@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Syndicate mining</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -49,14 +50,14 @@
     <section class="equipment">
         <div class="container">
             <div class="row">
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-sm-6">
                     <h2 class="equipment_title">Купить оборудование для майнинга</h2>
                     <div class="equipment_descr">
                         <p>У нас большой выбор эффективных майнеров для добычи криптовалюты.</p>
                         <p>Вы можете приобрести товары, которые есть в наличии, а также оформить предзаказ на интересующие позиции.Заключены прямые контракты на поставки от производителей: Bitmain, Innosilicon,Whatsminer и Canaan avalon.</p>
                     </div>
                 </div>
-                <div class="col-12 col-md-6">
+                <div class="col-12 col-sm-6">
                     <img src="img/3d-cryptocurrency-rendering-design.jpg" alt="cryptocurrency rendering" class="equipment_img">
                 </div>
             </div>
@@ -65,48 +66,47 @@
 
     <section class="advantage">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <h2 class="advantage_title">Наши преимущества</h2>
-                    <div class="advantage_wrapper">
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/fast-delivery.png" alt="fast delivery" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Быстрая доставка</div>
-                            </div>
+            <h2 class="advantage_title">Наши преимущества</h2>
+            <div class="advantage_slider">
+                <div class="advantage_wrapper">
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/fast-delivery.png" alt="fast delivery" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Быстрая доставка</div>
                         </div>
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/user.png" alt="user" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Круглосуточная техническая поддержка</div>
-                            </div>
-                            </div>
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/data-mining.png" alt="data mining" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Майнинг отель >30МВт</div>
-                            </div>
+                    </div>
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/user.png" alt="user" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Круглосуточная техническая поддержка</div>
                         </div>
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/guarantee.png" alt="guarantee" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Гарантия 12 месяцев</div>
-                            </div>
                         </div>
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/calendar.png" alt="calendar" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Окупаемость 8 месяцев</div>
-                            </div>
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/data-mining.png" alt="data mining" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Майнинг отель >30МВт</div>
                         </div>
-                        <div class="advantage_item">
-                            <div class="advantage_item_wrapper">
-                                <img src="icons/advantage/support.png" alt="support" class="advantage_item_icon">
-                                <div class="advantage_item_descr">Сервисный центр</div>
-                            </div>
+                    </div>
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/guarantee.png" alt="guarantee" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Гарантия 12 месяцев</div>
+                        </div>
+                    </div>
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/calendar.png" alt="calendar" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Окупаемость 8 месяцев</div>
+                        </div>
+                    </div>
+                    <div class="advantage_item">
+                        <div class="advantage_item_wrapper">
+                            <img src="icons/advantage/support.png" alt="support" class="advantage_item_icon">
+                            <div class="advantage_item_descr">Сервисный центр</div>
                         </div>
                     </div>
                 </div>
+                <div class="advatage_slider-nav sm-hidden"></div>
             </div>
         </div>
     </section>
@@ -142,7 +142,7 @@
         <div class="container">
             <h2 class="seles_title">Хиты продаж</h2>
             <button class="seles_arrow-left"><i class="fa-solid fa-chevron-left"></i></button>
-            <button class="seles_arrow-right arrow-active"><i class="fa-solid fa-chevron-right"></i></button>
+            <button class="seles_arrow-right"><i class="fa-solid fa-chevron-right"></i></button>
             <div class="seles_slider">
                 <div class="seles_wrapper">
                     <div class="seles_item">
@@ -217,19 +217,21 @@
                         </div>
                         <button class="seles_item_btn button">Оставить заявку</button>
                     </div>
+                    <div class="seles_item">
+                        <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
+                        <h3 class="seles_item_title">Whatsminer M30S+</h3>
+                        <div class="seles_item_descr">
+                            <p>Компанией MicroBT был выпущен новый асик, предназначенный для майнинга монеты Bitkoin и других криптовалют работающих на алгоритме SHA-256 – Whatsminer M30S 90Th.</p>
+                            <p>Энергопотребление – 3472 Вт/ч.</p>
+                            <p>Гарантия от производителя – 180 дней.</p>
+                            <p>Наименование чипа – Samsung 8 нм.</p>
+                            <p>Вес – 10.5 кг.</p>
+                        </div>
+                        <button class="seles_item_btn button">Оставить заявку</button>
+                    </div>
                 </div>
             </div>
-            <div class="seles_slider-nav">
-                <div class="seles_slider-nav_item active">
-                    <div></div>
-                </div>
-                <div class="seles_slider-nav_item">
-                    <div></div>
-                </div>
-                <div class="seles_slider-nav_item">
-                    <div></div>
-                </div>
-            </div>
+            <div class="seles_slider-nav"></div>
         </div>
     </section>
 
@@ -285,5 +287,7 @@
             <a href="#" class="footer_info">2022 © Syndicate mining</a>
         </div>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
