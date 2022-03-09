@@ -164,11 +164,16 @@
   .equipment_descr p:last-child { margin-bottom: 24px; }
   .advantage { padding: 40px 19px 40px 20px; overflow: hidden; }
   .advantage .container { padding: 0; }
-  .advantage .sm-hidden { display: block; }
+  .advantage .sm-hidden { display: -webkit-box; display: -ms-flexbox; display: flex; }
   .advantage_title { font-size: 14px; }
-  .advantage_wrapper { display: -webkit-box; display: -ms-flexbox; display: flex; position: relative; width: 894px; height: 198px; }
+  .advantage_slider { margin: 0 auto; width: 282px; }
+  .advantage_wrapper { display: -webkit-box; display: -ms-flexbox; display: flex; position: relative; left: 0; width: 878px; height: 198px; -webkit-transition: all 0.2s; transition: all 0.2s; }
   .advantage_item { width: 132px; height: 132px; }
   .advantage_item:nth-child(2n) { top: 66px; margin: 0 17px; }
+  .advantage_item:last-child { margin-right: 0; }
+  .advantage_slider-nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-top: 8px; }
+  .advantage_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 11px; height: 11px; border: 1px solid #929496; border-radius: 50%; margin: 0 2px; }
+  .advantage_slider-nav .active div { width: 7px; height: 7px; border-radius: 50%; background-color: #929496; -webkit-transition: all 1s; transition: all 1s; }
   .service { padding: 40px 0px; }
   .service_title { font-size: 16px; margin-bottom: 16px; }
   .service_wrapper { margin: 0 auto; width: 320px; padding: 0 20px; }
@@ -177,9 +182,6 @@
   .service_item:nth-child(n) { margin: 0; }
   .service_item:nth-child(2n+1) { margin: 0 16px 16px 0; }
   .service_item:last-child { margin: 0; }
-  .service_slider-nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-  .service_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 14px; height: 14px; border: 1px solid #929496; border-radius: 50%; margin: 0 4px; }
-  .service_slider-nav .active div { width: 10px; height: 10px; border-radius: 50%; background-color: #929496; -webkit-transition: all 1s; transition: all 1s; }
   .seles { padding: 40px 0px; }
   .seles_title { font-size: 14px; margin-bottom: 16px; }
   .seles_slider { margin: 0 auto; width: 320px; height: 468px; padding: 0 20px; }
