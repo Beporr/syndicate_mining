@@ -184,10 +184,17 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right");
+    // slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
 
-    sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item", ".advantage_slider-nav", "advantage_slider-nav_item", 2);
+    // sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item", ".advantage_slider-nav", "advantage_slider-nav_item", 2);
     // window.addEventListener('resize', () => {
     //     slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right");
     // });
+
+    if (window.screen.width < 575) {
+        sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item", ".advantage_slider-nav", "advantage_slider-nav_item", 2);
+        sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", 1);
+    } else {
+        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
+    }
 });

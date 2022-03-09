@@ -241,6 +241,11 @@
     }
 
     .seles {
+
+        &_slider {
+            overflow: visible;
+        }
+
         &_arrow-right, &_arrow-left {
             display: none;
         }
