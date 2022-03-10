@@ -241,9 +241,14 @@
     }
 
     .seles {
+        overflow: hidden;
 
         &_slider {
             overflow: visible;
+        }
+
+        &_wrapper {
+            transition: all 0.2s;
         }
 
         &_arrow-right, &_arrow-left {
@@ -593,7 +598,7 @@
 
             &_btn {
                 width: 130px;
-                height: 22%;
+                height: 22px;
                 border-radius: 29px;
                 font-size: 10px;
             }

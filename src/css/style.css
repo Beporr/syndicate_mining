@@ -132,7 +132,9 @@
   .service_wrapper { padding: 0 0 60px 20px; }
   .service_item { margin-right: 24px; }
   .service_item:nth-child(3n) { margin-right: 0; }
+  .seles { overflow: hidden; }
   .seles_slider { overflow: visible; }
+  .seles_wrapper { -webkit-transition: all 0.2s; transition: all 0.2s; }
   .seles_arrow-right, .seles_arrow-left { display: none; }
   .question { padding: 60px 8px; }
   .question_title { font-size: 24px; }
@@ -201,7 +203,7 @@
   .question_form { width: 100%; }
   .question_form input { width: 100%; font-size: 12px; margin-bottom: 24px; }
   .question_form input:last-child { margin-bottom: 32px; }
-  .question_form_btn { width: 130px; height: 22%; border-radius: 29px; font-size: 10px; }
+  .question_form_btn { width: 130px; height: 22px; border-radius: 29px; font-size: 10px; }
   .contacts { padding: 40px 8px; }
   .contacts_logo { margin: 0 0 24px 0; }
   .contacts_main_phone { margin-bottom: 14px; }

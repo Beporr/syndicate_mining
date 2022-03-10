@@ -1,6 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
-    const slider = (sliderLineSelector, itemsSelector, sliderNavSelector, sliderNavItemClass, btnPreSelector, btnNextSelector) => {
+    const slider = (sliderLineSelector, itemsSelector, sliderNavSelector,
+          sliderNavItemClass, btnPreSelector, btnNextSelector) => {
         
         function rollSlider() {
             sliderLine.style.left = `${-count*(sliderLine.offsetWidth/items.length)}px`;
@@ -27,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function createSliderNav() {
-            for (let i=0; i < items.length; i++) {
+            for (let i=0; i < items.length/2; i++) {
                 const sliderNavItem = document.createElement("div");
                 const div = document.createElement("div");
     
@@ -39,23 +40,21 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function toggleActiveSlide() {
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
-            sliderNavItems.forEach((item, i) => {
+            sliderNavItems.forEach((item, index) => {
                 item.classList.remove("active");
-                if (i === count) {
+                if (index === Math.round(count/2)) {
                     item.classList.add("active");
                 }
             });
         }
         
         const items = document.querySelectorAll(itemsSelector);
-        // const slider = document.querySelector(sliderSelector);
         const sliderLine = document.querySelector(sliderLineSelector);
         const sliderNext = document.querySelector(btnNextSelector);
         const sliderPre = document.querySelector(btnPreSelector);
         const sliderNav = document.querySelector(sliderNavSelector);
         
         let count = 0;
-        let countShowSlids;
 
         removeSliderNav();
         createSliderNav();        
@@ -83,17 +82,10 @@ window.addEventListener('DOMContentLoaded', () => {
             rollSlider();
             toggleActiveSlide();
         });
-
-
     };
 
-    const sliderSwiper = (sliderSelector, sliderLineSelector, sliderItemSelector, sliderNavSelector, sliderNavItemClass, countShowSlids) => {
-        
-        function removeSliderNav() {
-            while (sliderNav.firstChild) {
-                sliderNav.firstChild.remove();
-            }
-        }
+    const sliderSwiper = (sliderSelector, sliderLineSelector, sliderItemSelector,
+          sliderNavSelector, sliderNavItemClass, countShowSlids) => {
 
         function createSliderNav() {
             for (let i=0; i < sliderItems.length/countShowSlids; i++) {
@@ -108,12 +100,20 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function toggleActiveSlide() {
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
-            sliderNavItems.forEach((item, i) => {
+
+            const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
+
+            sliderNavItems.forEach(item => {
                 item.classList.remove("active");
-                if (i === count) {
-                    item.classList.add("active");
-                }
             });
+
+            for (let i = 0; i < sliderNavItems.length; i++) {
+
+                if ((showSlideWidth * (i+1) + position >= window.screen.width/2) &&
+                 (showSlideWidth * i + position <= window.screen.width/2)) {
+                    sliderNavItems[i].classList.add("active");
+                }
+            }
         }
 
         function handleTouchStart(event) {
@@ -121,27 +121,26 @@ window.addEventListener('DOMContentLoaded', () => {
             event.stopPropagation();
             const firstTouch = event.touches[0];
 
-            x1 = firstTouch.clientX;
-            arrXDiff = [0];
+            startPositionTouch = firstTouch.clientX;
+            arrPositionTouchDiff = [0];
         }
 
         function handleTouchMove(event) {
             event.preventDefault();
             event.stopPropagation();
 
-            if (!x1) {
+            if (!startPositionTouch) {
                 return false;
             }
 
-            let x2 = event.touches[0].clientX;
+            let PositionTouch = event.touches[0].clientX;
 
-            let xDiff = x2 - x1;
+            let PositionTouchDiff = PositionTouch - startPositionTouch;
 
-            arrXDiff.push(xDiff);
-            let i = arrXDiff.length - 1;
-            let j = arrXDiff.length - 2;
+            arrPositionTouchDiff.push(PositionTouchDiff);
 
-            position += arrXDiff[arrXDiff.length - 1] - arrXDiff[arrXDiff.length - 2];
+            position += arrPositionTouchDiff[arrPositionTouchDiff.length - 1] -
+             arrPositionTouchDiff[arrPositionTouchDiff.length - 2];
 
             if (position > 0) {
                 position = 0;
@@ -151,11 +150,8 @@ window.addEventListener('DOMContentLoaded', () => {
                 position = -maxScrollSlider;
             }
 
-            sliderLine.style.left = `${position}px`
-        }
-
-        function scrollSlider () {
-
+            sliderLine.style.left = `${position}px`;
+            toggleActiveSlide();
         }
 
         const slider = document.querySelector(sliderSelector),
@@ -163,38 +159,26 @@ window.addEventListener('DOMContentLoaded', () => {
               sliderNav = document.querySelector(sliderNavSelector),
               sliderItems = document.querySelectorAll(sliderItemSelector);
 
-        let x1 = null;
-        let count = 0;
+        let startPositionTouch = null;
         let position = 0;
-        let arrXDiff = [0];
-        let countShow = countShowSlids;
+        let arrPositionTouchDiff = [0];
 
         const maxScrollSlider = sliderLine.offsetWidth - window.screen.width + 2*slider.offsetLeft;
-        console.log(maxScrollSlider);
 
         slider.addEventListener('touchstart', handleTouchStart);
         slider.addEventListener('touchmove', handleTouchMove);
-        slider.addEventListener('touchend', handleTouchEnd);
 
         createSliderNav();
         toggleActiveSlide();
-
-        function handleTouchEnd(e) {
-            
-        }
     }
 
-    // slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
-
-    // sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item", ".advantage_slider-nav", "advantage_slider-nav_item", 2);
-    // window.addEventListener('resize', () => {
-    //     slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right");
-    // });
-
-    if (window.screen.width < 575) {
-        sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item", ".advantage_slider-nav", "advantage_slider-nav_item", 2);
-        sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", 1);
+    if (window.screen.width < 992) {
+        sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item",
+                     ".advantage_slider-nav", "advantage_slider-nav_item", 2);
+        sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
+                     ".seles_slider-nav", "seles_slider-nav_item", 1);
     } else {
-        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav", "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
+        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
+               "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
     }
 });
