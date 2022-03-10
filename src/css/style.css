@@ -6,6 +6,7 @@
 .container { max-width: 1170px; }
 
 .button { border: 1px solid #FFFFFF; background: none; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 30px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
+.button:hover { color: #D3D3D3; }
 
 .header { position: absolute; padding-top: 30px; width: 100%; }
 .header_phone { display: inline; text-align: right; }
@@ -195,7 +196,7 @@
   .seles_item_title { font-size: 12px; }
   .seles_item_descr p { font-size: 10px; }
   .seles_item_descr p:last-child { margin-bottom: 16px; }
-  .seles_item_btn { width: 130px; height: 22px; font-size: 10px; }
+  .seles_item_btn { width: 130px; height: 22px; border-radius: 29px; font-size: 10px; }
   .seles_item:nth-child(n) { margin: 0 20px 0 0; }
   .question { padding: 40px 8px 54px; }
   .question_title { font-size: 14px; margin-bottom: 12px; }

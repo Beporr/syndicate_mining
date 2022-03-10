@@ -26,6 +26,10 @@ $active_color: #929496;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    &:hover {
+        color: $light_color;
+    }
 }
 
 .header {
