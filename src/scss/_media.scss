@@ -74,15 +74,16 @@
     }
 
     .seles {
-        padding: 60px 20px 44px 20px;
+        padding: 60px 20px;
 
         .container {
             max-width: 768px;
         }
 
         &_slider {
-            width: 748px;
-            height: 585px;
+            width: 745px;
+            height: 525px;
+            overflow: hidden;
         }
 
         &_arrow-right {
@@ -93,6 +94,7 @@
             width: 352px;
             height: 507px;
             padding: 16px 25px 20px 25px;
+            margin-right: 24px;
 
             &_img {
                 width: 190px;
@@ -110,10 +112,6 @@
                     line-height: 18px;
                     margin-bottom: 8px;
                 }
-            }
-
-            &:nth-child(2n+1) {
-                margin-top: 60px;
             }
         }
     }
@@ -241,10 +239,9 @@
     }
 
     .seles {
-        overflow: hidden;
 
         &_slider {
-            overflow: visible;
+            overflow: hidden;
         }
 
         &_wrapper {
@@ -340,10 +337,6 @@
 }
 
 @media (max-width: 767px) {
-
-}
-
-@media (max-width: 575px) {
     .header {
         padding: 12px 8px 0px 20px;
 
@@ -421,14 +414,14 @@
         &_slider {
             margin: 0 auto;
             width: 282px;
-            // overflow: hidden;
+            overflow: hidden;
         }
 
         &_wrapper {
             display: flex;
             position: relative;
             left: 0;
-            width: 878px;
+            width: 895px;
             height: 198px;
             transition: all 0.2s;
         }
@@ -440,10 +433,6 @@
             &:nth-child(2n) {
                 top: 66px;
                 margin: 0 17px;
-            }
-
-            &:last-child {
-                margin-right: 0;
             }
         }
 
@@ -524,13 +513,10 @@
 
         &_slider {
             margin: 0 auto;
-            width: 320px;
+            width: 300px;
             height: 468px;
             padding: 0 20px;
-        }
-
-        &_wrapper {
-            margin-left: 20px;
+            overflow: hidden;
         }
 
         &_item {

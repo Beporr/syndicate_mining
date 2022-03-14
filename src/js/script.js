@@ -132,6 +132,7 @@ window.addEventListener('DOMContentLoaded', () => {
         function sliderNavigation() {
             const sliderNavItems = document.querySelectorAll('.' + sliderNavItemClass);
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
+            console.log(sliderNavItems.length)
 
             sliderNavItems.forEach((item, index) => {
                 item.addEventListener('touchstart', () => {
@@ -144,20 +145,15 @@ window.addEventListener('DOMContentLoaded', () => {
 
         function toggleActiveSlide() {
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
-
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
 
             sliderNavItems.forEach(item => {
                 item.classList.remove("active");
             });
 
-            for (let i = 0; i < sliderNavItems.length; i++) {
+            let sliderIndex = Math.abs(position/showSlideWidth);
 
-                if ((showSlideWidth * (i+1) + position >= window.screen.width/2) &&
-                 (showSlideWidth * i + position <= window.screen.width/2)) {
-                    sliderNavItems[i].classList.add("active");
-                }
-            }
+            sliderNavItems[sliderIndex].classList.add("active");
         }
 
         function handleTouchStart(event) {
@@ -167,7 +163,6 @@ window.addEventListener('DOMContentLoaded', () => {
 
             startPositionTouch = firstTouch.clientX;
             arrPositionTouchDiff = [0];
-            sliderNavigation();
         }
 
         function handleTouchMove(event) {
@@ -191,28 +186,25 @@ window.addEventListener('DOMContentLoaded', () => {
             toggleActiveSlide();
         }
 
-        function handleTouchEnd() {
+        function handleTouchEnd(event) {
+            event.preventDefault();
+            event.stopPropagation();
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
-            const sliderItemsCheckPoints = [];
             
             for (let i = 0; i < sliderNavItems.length; i++) {
-                sliderItemsCheckPoints.push(-showSlideWidth * i);
 
                 if ((-showSlideWidth * (i+1) <= position) && (-showSlideWidth * i > position)) {
                     if (PositionTouchDiff > 20) {
-                        position = -showSlideWidth * (i);
-                        sliderMove()
-                        toggleActiveSlide();
-                        sliderNavigation()
+                        position = -showSlideWidth * i;
                     }
         
                     if (PositionTouchDiff < -20) {
                         position = -showSlideWidth * (i+1);
-                        sliderMove();
-                        toggleActiveSlide();
-                        sliderNavigation()
                     }
+
+                    sliderMove();
+                    toggleActiveSlide();
                 }
             }
         }
@@ -222,30 +214,40 @@ window.addEventListener('DOMContentLoaded', () => {
               sliderNav = document.querySelector(sliderNavSelector),
               sliderItems = document.querySelectorAll(sliderItemSelector);
 
+        
         let startPositionTouch = null;
         let position = 0;
         let PositionTouch = 0;
         let PositionTouchDiff =  0;
         let arrPositionTouchDiff = [0];
+        
+        createSliderNav();
+        sliderNavigation();
+        toggleActiveSlide();
 
-        const maxScrollSlider = sliderLine.offsetWidth - window.screen.width + 2*slider.offsetLeft;
+        const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);        
+        const maxScrollSlider = sliderLine.offsetWidth - sliderLine.offsetWidth / sliderNavItems.length;
 
         slider.addEventListener('touchstart', handleTouchStart);
         slider.addEventListener('touchmove', handleTouchMove);
         slider.addEventListener('touchend', handleTouchEnd);
 
-        createSliderNav();
-        toggleActiveSlide();
-        sliderNavigation();
+    }
+    
+    if (window.screen.width >= 992) {
+        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
+               "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
     }
 
-    if (window.screen.width < 992) {
+    if (window.screen.width < 992 && window.screen.width >= 768) {
+        sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
+                     ".seles_slider-nav", "seles_slider-nav_item", 2);
+    }
+
+    if (window.screen.width < 768) {
         sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item",
                      ".advantage_slider-nav", "advantage_slider-nav_item", 2);
         sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
                      ".seles_slider-nav", "seles_slider-nav_item", 1);
-    } else {
-        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
-               "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
     }
 });
