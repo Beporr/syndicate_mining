@@ -44,7 +44,7 @@
 
 .seles { padding: 80px 0 28px 0; position: relative; }
 .seles .container { position: relative; }
-.seles_slider { position: relative; overflow: hidden; width: 1190px; height: 860px; margin-bottom: 72px; }
+.seles_slider { position: relative; overflow: hidden; width: 1190px; height: 782px; margin-bottom: 72px; }
 .seles_arrow-left { position: absolute; top: 50%; font-size: 54px; border: none; left: -40px; color: #929496; background: none; z-index: 10; }
 .seles_arrow-left[disabled] { color: #D3D3D3; cursor: not-allowed; }
 .seles_arrow-right { position: absolute; top: 50%; font-size: 54px; border: none; right: -40px; color: #929496; background: none; z-index: 10; }
@@ -57,7 +57,6 @@
 .seles_item_title { font-style: normal; font-weight: bold; font-size: 24px; color: #000000; margin-bottom: 15px; }
 .seles_item_descr p { font-style: normal; font-weight: normal; font-size: 16px; line-height: 32px; color: #000000; margin-bottom: 11px; }
 .seles_item_btn { width: 200px; height: 36px; margin: 0 auto; border: 1px solid #000000; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 42px; font-style: normal; font-weight: normal; font-size: 16px; color: #000000; }
-.seles_item:nth-child(2n+1) { margin-top: 80px; }
 .seles_slider-nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 .seles_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 14px; height: 14px; border: 1px solid #929496; border-radius: 50%; margin: 0 4px; }
 .seles_slider-nav .active div { width: 10px; height: 10px; border-radius: 50%; background-color: #929496; -webkit-transition: all 1s; transition: all 1s; }

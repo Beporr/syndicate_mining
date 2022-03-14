@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', () => {
 
     const slider = (sliderLineSelector, itemsSelector, sliderNavSelector,
-          sliderNavItemClass, btnPreSelector, btnNextSelector) => {
+          sliderNavItemClass, btnPreSelector, btnNextSelector, countShowSlids) => {
         
         function rollSlider() {
             sliderLine.style.left = `${-count*(sliderLine.offsetWidth/items.length)}px`;
@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function createSliderNav() {
-            for (let i=0; i < items.length/2; i++) {
+            for (let i=0; i < items.length/countShowSlids; i++) {
                 const sliderNavItem = document.createElement("div");
                 const div = document.createElement("div");
     
@@ -38,11 +38,48 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        function sliderNavigation() {
+            // sliderNav.addEventListener('click', (e) => {
+            //     if (e.target.classList.contains(sliderNavItemClass)) {
+            //         console.log(e.target.className);
+
+            //         count = 0;
+            //         disableBtn();
+            //         rollSlider();
+            //         toggleActiveSlide();
+            //     }
+                
+            // });
+            const sliderNavItems = document.querySelectorAll('.' + sliderNavItemClass);
+
+            sliderNavItems.forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    if (index * countShowSlids < items.length - 2) {
+                        count = index * countShowSlids;
+                    } else {
+                        count = index * countShowSlids - 1;
+                    }
+
+                    // if (count >= 2) {
+                    //     count += -2;
+                    // } else {
+                    //     count += -1;
+                    // }
+
+                    // count = index * countShowSlids;
+                    console.log(index * countShowSlids)
+                    disableBtn();
+                    rollSlider();
+                    toggleActiveSlide();
+                });
+            });
+        }
+
         function toggleActiveSlide() {
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
             sliderNavItems.forEach((item, index) => {
                 item.classList.remove("active");
-                if (index === Math.round(count/2)) {
+                if (index === Math.round(count/countShowSlids)) {
                     item.classList.add("active");
                 }
             });
@@ -82,6 +119,7 @@ window.addEventListener('DOMContentLoaded', () => {
             rollSlider();
             toggleActiveSlide();
         });
+        sliderNavigation();
     };
 
     const sliderSwiper = (sliderSelector, sliderLineSelector, sliderItemSelector,

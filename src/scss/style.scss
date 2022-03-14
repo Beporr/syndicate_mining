@@ -243,7 +243,7 @@ $active_color: #929496;
         position: relative;
         overflow: hidden;
         width: 1190px;
-        height: 860px;
+        height: 782px;
         margin-bottom: 72px;
     }
 
@@ -345,10 +345,6 @@ $active_color: #929496;
             font-weight: normal;
             font-size: 16px;
             color: #000000;
-        }
-
-        &:nth-child(2n+1) {
-            margin-top: 80px;
         }
     }
 
