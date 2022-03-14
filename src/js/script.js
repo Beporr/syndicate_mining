@@ -204,12 +204,14 @@ window.addEventListener('DOMContentLoaded', () => {
                         position = -showSlideWidth * (i);
                         sliderMove()
                         toggleActiveSlide();
+                        sliderNavigation()
                     }
         
                     if (PositionTouchDiff < -20) {
                         position = -showSlideWidth * (i+1);
                         sliderMove();
                         toggleActiveSlide();
+                        sliderNavigation()
                     }
                 }
             }
