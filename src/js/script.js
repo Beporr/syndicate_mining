@@ -43,7 +43,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             sliderNavItems.forEach((item, index) => {
                 item.addEventListener('click', () => {
-                    if (index * countShowSlids < items.length - 2) {
+                    if (index * countShowSlids < items.length - 1) {
                         count = index * countShowSlids;
                     } else {
                         count = index * countShowSlids - 1;
@@ -153,7 +153,9 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let sliderIndex = Math.abs(position/showSlideWidth);
 
-            sliderNavItems[sliderIndex].classList.add("active");
+            if (sliderIndex < sliderNavItems.length) {
+                sliderNavItems[sliderIndex].classList.add("active");
+            }
         }
 
         function handleTouchStart(event) {
