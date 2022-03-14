@@ -167,6 +167,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
             startPositionTouch = firstTouch.clientX;
             arrPositionTouchDiff = [0];
+            sliderNavigation();
         }
 
         function handleTouchMove(event) {

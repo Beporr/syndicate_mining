@@ -58,7 +58,7 @@
 .seles_item_descr p { font-style: normal; font-weight: normal; font-size: 16px; line-height: 32px; color: #000000; margin-bottom: 11px; }
 .seles_item_btn { width: 200px; height: 36px; margin: 0 auto; border: 1px solid #000000; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 42px; font-style: normal; font-weight: normal; font-size: 16px; color: #000000; }
 .seles_slider-nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-.seles_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 14px; height: 14px; border: 1px solid #929496; border-radius: 50%; margin: 0 4px; }
+.seles_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 14px; height: 14px; border: 1px solid #929496; border-radius: 50%; margin: 0 4px; cursor: pointer; }
 .seles_slider-nav .active div { width: 10px; height: 10px; border-radius: 50%; background-color: #929496; -webkit-transition: all 1s; transition: all 1s; }
 
 .question { background: url("../img/background/blockchain-technology-background-in-gradient-blue22 1.jpg") 50% 0/cover no-repeat; padding: 70px 0; }
@@ -176,7 +176,7 @@
   .advantage_item:nth-child(2n) { top: 66px; margin: 0 17px; }
   .advantage_item:last-child { margin-right: 0; }
   .advantage_slider-nav { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; margin-top: 8px; }
-  .advantage_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 11px; height: 11px; border: 1px solid #929496; border-radius: 50%; margin: 0 2px; }
+  .advantage_slider-nav_item { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; width: 11px; height: 11px; border: 1px solid #929496; border-radius: 50%; margin: 0 2px; cursor: pointer; }
   .advantage_slider-nav .active div { width: 7px; height: 7px; border-radius: 50%; background-color: #929496; -webkit-transition: all 1s; transition: all 1s; }
   .service { padding: 40px 0px; }
   .service_title { font-size: 16px; margin-bottom: 16px; }
