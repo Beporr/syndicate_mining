@@ -39,17 +39,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function sliderNavigation() {
-            // sliderNav.addEventListener('click', (e) => {
-            //     if (e.target.classList.contains(sliderNavItemClass)) {
-            //         console.log(e.target.className);
-
-            //         count = 0;
-            //         disableBtn();
-            //         rollSlider();
-            //         toggleActiveSlide();
-            //     }
-                
-            // });
             const sliderNavItems = document.querySelectorAll('.' + sliderNavItemClass);
 
             sliderNavItems.forEach((item, index) => {
@@ -60,14 +49,6 @@ window.addEventListener('DOMContentLoaded', () => {
                         count = index * countShowSlids - 1;
                     }
 
-                    // if (count >= 2) {
-                    //     count += -2;
-                    // } else {
-                    //     count += -1;
-                    // }
-
-                    // count = index * countShowSlids;
-                    console.log(index * countShowSlids)
                     disableBtn();
                     rollSlider();
                     toggleActiveSlide();
@@ -136,6 +117,31 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        function sliderMove() {
+            if (position > 0) {
+                position = 0;
+            }
+
+            if (Math.abs(position) > maxScrollSlider) {
+                position = -maxScrollSlider;
+            }
+
+            sliderLine.style.left = `${position}px`;
+        }
+
+        function sliderNavigation() {
+            const sliderNavItems = document.querySelectorAll('.' + sliderNavItemClass);
+            const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
+
+            sliderNavItems.forEach((item, index) => {
+                item.addEventListener('touchstart', () => {
+                    position = -showSlideWidth * (index);
+                    sliderMove()
+                    toggleActiveSlide();
+                });
+            });
+        }
+
         function toggleActiveSlide() {
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
 
@@ -171,25 +177,41 @@ window.addEventListener('DOMContentLoaded', () => {
                 return false;
             }
 
-            let PositionTouch = event.touches[0].clientX;
+            PositionTouch = event.touches[0].clientX;
 
-            let PositionTouchDiff = PositionTouch - startPositionTouch;
+            PositionTouchDiff = PositionTouch - startPositionTouch;
 
             arrPositionTouchDiff.push(PositionTouchDiff);
 
             position += arrPositionTouchDiff[arrPositionTouchDiff.length - 1] -
              arrPositionTouchDiff[arrPositionTouchDiff.length - 2];
 
-            if (position > 0) {
-                position = 0;
-            }
-
-            if (Math.abs(position) > maxScrollSlider) {
-                position = -maxScrollSlider;
-            }
-
-            sliderLine.style.left = `${position}px`;
+            sliderMove();
             toggleActiveSlide();
+        }
+
+        function handleTouchEnd() {
+            const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
+            const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
+            const sliderItemsCheckPoints = [];
+            
+            for (let i = 0; i < sliderNavItems.length; i++) {
+                sliderItemsCheckPoints.push(-showSlideWidth * i);
+
+                if ((-showSlideWidth * (i+1) <= position) && (-showSlideWidth * i > position)) {
+                    if (PositionTouchDiff > 20) {
+                        position = -showSlideWidth * (i);
+                        sliderMove()
+                        toggleActiveSlide();
+                    }
+        
+                    if (PositionTouchDiff < -20) {
+                        position = -showSlideWidth * (i+1);
+                        sliderMove();
+                        toggleActiveSlide();
+                    }
+                }
+            }
         }
 
         const slider = document.querySelector(sliderSelector),
@@ -199,15 +221,19 @@ window.addEventListener('DOMContentLoaded', () => {
 
         let startPositionTouch = null;
         let position = 0;
+        let PositionTouch = 0;
+        let PositionTouchDiff =  0;
         let arrPositionTouchDiff = [0];
 
         const maxScrollSlider = sliderLine.offsetWidth - window.screen.width + 2*slider.offsetLeft;
 
         slider.addEventListener('touchstart', handleTouchStart);
         slider.addEventListener('touchmove', handleTouchMove);
+        slider.addEventListener('touchend', handleTouchEnd);
 
         createSliderNav();
         toggleActiveSlide();
+        sliderNavigation();
     }
 
     if (window.screen.width < 992) {
