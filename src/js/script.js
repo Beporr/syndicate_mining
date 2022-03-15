@@ -152,14 +152,14 @@ window.addEventListener('DOMContentLoaded', () => {
 
             let sliderIndex = Math.abs(position/showSlideWidth);
 
-            if (sliderIndex < sliderNavItems.length) {
-                sliderNavItems[sliderIndex].classList.add("active");
+            if (Math.floor(sliderIndex) < sliderNavItems.length) {
+                sliderNavItems[Math.floor(sliderIndex)].classList.add("active");
             }
         }
 
         function handleTouchStart(event) {
-            event.preventDefault();
-            event.stopPropagation();
+            // event.preventDefault();
+            // event.stopPropagation();
             const firstTouch = event.touches[0];
 
             startPositionTouch = firstTouch.clientX;
@@ -167,8 +167,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleTouchMove(event) {
-            event.preventDefault();
-            event.stopPropagation();
+            // event.preventDefault();
+            // event.stopPropagation();
 
             if (!startPositionTouch) {
                 return false;
@@ -188,8 +188,8 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleTouchEnd(event) {
-            event.preventDefault();
-            event.stopPropagation();
+            // event.preventDefault();
+            // event.stopPropagation();
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
             
@@ -236,12 +236,17 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     const popup = (modalSelector, modalOpenSelector, modalCloseSelector) => {
+
         const modal = document.querySelector(modalSelector);
         const modalOpen = document.querySelectorAll(modalOpenSelector);
         const modalClose = document.querySelector(modalCloseSelector);
 
+        console.log(modalOpen);
+
         modalOpen.forEach(item => {
-            item.addEventListener('click', () => {
+            item.addEventListener('click', (e) => {
+                // e.
+                // e.stopPropagation();
                 document.body.style.overflow = 'hidden';
                 modal.style.display = 'flex';
             });
@@ -259,6 +264,7 @@ window.addEventListener('DOMContentLoaded', () => {
             }
         })
     };
+    popup(".popup", "[data-popup]", ".popup_close");
     
     if (window.screen.width >= 992) {
         slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
@@ -277,5 +283,4 @@ window.addEventListener('DOMContentLoaded', () => {
                      ".seles_slider-nav", "seles_slider-nav_item", 1);
     }
 
-    popup(".popup", "[data-popup]", ".popup_close");
 });
