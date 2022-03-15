@@ -132,7 +132,6 @@ window.addEventListener('DOMContentLoaded', () => {
         function sliderNavigation() {
             const sliderNavItems = document.querySelectorAll('.' + sliderNavItemClass);
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
-            console.log(sliderNavItems.length)
 
             sliderNavItems.forEach((item, index) => {
                 item.addEventListener('touchstart', () => {
