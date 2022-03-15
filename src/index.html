@@ -42,7 +42,7 @@
             <div class="row">
                 <div class="col-11">
                     <h1 class="miners_title">Оборудование для майнинга в наличии и под заказ</h1>
-                    <div type="button" class="miners_btn button">Оставить заявку</div>
+                    <button data-popup type="button" class="miners_btn button">Оставить заявку</button>
                 </div>
             </div>
         </div>
@@ -156,7 +156,7 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
                     <div class="seles_item">
                         <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
@@ -168,7 +168,7 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
                     <div class="seles_item">
                         <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
@@ -180,7 +180,7 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
                     <div class="seles_item">
                         <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
@@ -192,7 +192,7 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
                     <div class="seles_item">
                         <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
@@ -204,7 +204,7 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
                     <div class="seles_item">
                         <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
@@ -216,20 +216,8 @@
                             <p>Наименование чипа – Samsung 8 нм.</p>
                             <p>Вес – 10.5 кг.</p>
                         </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
+                        <button data-popup class="seles_item_btn button">Оставить заявку</button>
                     </div>
-                    <!-- <div class="seles_item">
-                        <img src="img/seles/obor_1.png" alt="" class="seles_item_img">
-                        <h3 class="seles_item_title">Whatsminer M30S+</h3>
-                        <div class="seles_item_descr">
-                            <p>Компанией MicroBT был выпущен новый асик, предназначенный для майнинга монеты Bitkoin и других криптовалют работающих на алгоритме SHA-256 – Whatsminer M30S 90Th.</p>
-                            <p>Энергопотребление – 3472 Вт/ч.</p>
-                            <p>Гарантия от производителя – 180 дней.</p>
-                            <p>Наименование чипа – Samsung 8 нм.</p>
-                            <p>Вес – 10.5 кг.</p>
-                        </div>
-                        <button class="seles_item_btn button">Оставить заявку</button>
-                    </div> -->
                 </div>
             </div>
             <div class="seles_slider-nav"></div>
@@ -288,6 +276,23 @@
             <a href="#" class="footer_info">2022 © Syndicate mining</a>
         </div>
     </footer>
+
+    <div class="popup">
+        <div class="popup_container">
+            <img src="icons/close.svg" alt="" class="popup_close">
+            <div class="popup_title">Оставить заявку</div>
+            <form action="#" class="popup_form">
+                <input required type="text" placeholder="Имя*">
+                <input required type="tel" placeholder="Телефон*">
+                <input required type="email" placeholder="E-mail*">
+                <div class="popup_form_agreement">
+                    <input required type="checkbox" checked>
+                    <span class="popup_form_agreement_descr">Я согласен на обработку персональных данных</span>
+                </div>
+                <button type="submit" class="popup_form_button">Отправить</button>
+            </form>
+        </div>
+    </div>
 
     <script src="js/script.js"></script>
 </body>

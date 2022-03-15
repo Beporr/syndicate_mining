@@ -234,6 +234,31 @@ window.addEventListener('DOMContentLoaded', () => {
         slider.addEventListener('touchend', handleTouchEnd);
 
     }
+
+    const popup = (modalSelector, modalOpenSelector, modalCloseSelector) => {
+        const modal = document.querySelector(modalSelector);
+        const modalOpen = document.querySelectorAll(modalOpenSelector);
+        const modalClose = document.querySelector(modalCloseSelector);
+
+        modalOpen.forEach(item => {
+            item.addEventListener('click', () => {
+                document.body.style.overflow = 'hidden';
+                modal.style.display = 'flex';
+            });
+        });
+
+        modalClose.addEventListener('click', () => {
+            document.body.style.overflow = 'visible';
+            modal.style.display = 'none';
+        });
+
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                document.body.style.overflow = 'visible';
+                modal.style.display = 'none';
+            }
+        })
+    };
     
     if (window.screen.width >= 992) {
         slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
@@ -251,4 +276,6 @@ window.addEventListener('DOMContentLoaded', () => {
         sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
                      ".seles_slider-nav", "seles_slider-nav_item", 1);
     }
+
+    popup(".popup", "[data-popup]", ".popup_close");
 });
