@@ -259,12 +259,14 @@ window.addEventListener('DOMContentLoaded', () => {
                     }
                 });
                 
-                if(!checkBox.checked) {
-                    checkBox.classList.add("invalid");
-                    console.log('no checkBox')
-                    return false;
-                } else {
-                    checkBox.classList.remove("invalid");
+                if (checkBox) {
+                    if(!checkBox.checked) {
+                        checkBox.classList.add("invalid");
+                        console.log('no checkBox')
+                        return false;
+                    } else {
+                        checkBox.classList.remove("invalid");
+                    }
                 }
                 
                 if (emptyInputs.length !== 0) {
@@ -301,8 +303,7 @@ window.addEventListener('DOMContentLoaded', () => {
     };
 
     popup(".popup", "[data-popup]", ".popup_close", ".popup_form_button", ".popup_form");
-    // popup(".popup-success", ".popup_form_button", ".popup-success_close");
-    popup(".popup-success", 'none', ".popup-success_close");
+    popup(".popup-success", 'none', ".popup-success_close", ".question_form_btn", ".question_form");
     
     if (window.screen.width >= 992) {
         slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",

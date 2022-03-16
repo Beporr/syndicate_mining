@@ -26,12 +26,21 @@ $active_color: #929496;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.btn_dark {
     &:hover {
-        color: $light_color;
+        background-color: #000000;
+        color: #FFFFFF;
     }
 }
 
+.btn_light {
+    &:hover {
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+}
 .header {
     position: absolute;
     padding-top: 30px;
@@ -427,6 +436,26 @@ $active_color: #929496;
             }
         }
 
+        input.invalid {
+            color: red;
+            border-color: red;
+        }
+
+        input.invalid + div{
+            display: block;
+            border-color:red;
+            position: relative;
+            
+            &::after {
+                content: "Заполните обязательные поля";
+                position: absolute;
+                left: 0;
+                top: -25px;
+                font-size: 12px;
+                color: red;                
+            }
+        }
+
         &_btn {
             width: 200px;
             height: 36px;
@@ -569,6 +598,7 @@ $active_color: #929496;
         }
 
         input.invalid {
+            color: red;
             border-color: red;
         }
 

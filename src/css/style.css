@@ -7,7 +7,10 @@
 .container { max-width: 1170px; }
 
 .button { border: 1px solid #FFFFFF; background: none; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 30px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
-.button:hover { color: #D3D3D3; }
+
+.btn_dark:hover { background-color: #000000; color: #FFFFFF; }
+
+.btn_light:hover { background-color: #FFFFFF; color: #000000; }
 
 .header { position: absolute; padding-top: 30px; width: 100%; }
 .header_phone { display: inline; text-align: right; }
@@ -69,6 +72,9 @@
 .question_form { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; margin: 0 auto; width: 970px; }
 .question_form input { border: none; border-bottom: 1px solid #D3D3D3; width: 470px; background: none; font-style: normal; font-weight: normal; font-size: 16px; color: #FFFFFF; padding: 0 10px 4px 10px; margin-bottom: 40px; }
 .question_form input:nth-child(3) { width: 970px; margin-bottom: 44px; }
+.question_form input.invalid { color: red; border-color: red; }
+.question_form input.invalid + div { display: block; border-color: red; position: relative; }
+.question_form input.invalid + div::after { content: "Заполните обязательные поля"; position: absolute; left: 0; top: -25px; font-size: 12px; color: red; }
 .question_form_btn { width: 200px; height: 36px; margin: 0 auto; font-style: normal; font-weight: 400; font-size: 16px; text-align: center; color: #FFFFFF; }
 
 .contacts { padding: 80px 0; }
@@ -90,7 +96,7 @@
 .popup_title { font-family: 'Josefin Sans'; font-style: normal; font-weight: 600; font-size: 24px; -webkit-box-align: center; -ms-flex-align: center; align-items: center; text-align: center; color: #929496; margin-bottom: 60px; }
 .popup_form { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
 .popup_form input { width: 100%; height: 20px; border: none; border-bottom: 1px solid #000; padding: 0 10px 4px 10px; margin-bottom: 32px; font-weight: 400; font-size: 15px; line-height: 16px; color: #000000; }
-.popup_form input.invalid { border-color: red; }
+.popup_form input.invalid { color: red; border-color: red; }
 .popup_form input.invalid + div { display: block; border-color: red; position: relative; }
 .popup_form input.invalid + div::after { content: "Заполните обязательные поля"; position: absolute; left: 0; top: -25px; font-size: 12px; color: red; }
 .popup_form input.invalid[type="checkbox"] { border-color: #000000; }
