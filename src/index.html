@@ -281,16 +281,27 @@
         <div class="popup_container">
             <img src="icons/close.svg" alt="" class="popup_close">
             <div class="popup_title">Оставить заявку</div>
-            <form action="#" class="popup_form">
-                <input required type="text" placeholder="Имя*">
-                <input required type="tel" placeholder="Телефон*">
-                <input required type="email" placeholder="E-mail*">
+            <form action="" class="popup_form" novalidate>
+                <input type="text" placeholder="Имя*">
+                <div></div>
+                <input type="text" placeholder="Телефон*">
+                <div></div>
+                <input type="text" placeholder="E-mail*">
+                <div></div>
                 <div class="popup_form_agreement">
-                    <input required type="checkbox" checked>
+                    <input type="checkbox" checked>
                     <span class="popup_form_agreement_descr">Я согласен на обработку персональных данных</span>
                 </div>
                 <button type="submit" class="popup_form_button">Отправить</button>
             </form>
+        </div>
+    </div>
+
+    <div class="popup-success">
+        <div class="popup-success_container">
+            <img src="icons/close.svg" alt="" class="popup-success_close">
+            <img src="img/check_big.svg" alt="" class="popup-success_check">
+            <div class="popup-success_text">Заявка успешно отправлена</div>
         </div>
     </div>
 

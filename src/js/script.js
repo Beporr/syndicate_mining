@@ -235,18 +235,53 @@ window.addEventListener('DOMContentLoaded', () => {
 
     }
 
-    const popup = (modalSelector, modalOpenSelector, modalCloseSelector) => {
+    const popup = (modalSelector, modalOpenSelector, modalCloseSelector, modalBtnSelector = null, formSelector = null) => {
 
         const modal = document.querySelector(modalSelector);
         const modalOpen = document.querySelectorAll(modalOpenSelector);
         const modalClose = document.querySelector(modalCloseSelector);
+        const modalBtn = document.querySelector(modalBtnSelector);
 
-        console.log(modalOpen);
+        if(formSelector) {
+            const form = document.querySelector(formSelector);
+            
+
+            form.onsubmit = function () {
+                const inputs = document.querySelectorAll(formSelector + " input");
+                const checkBox = inputs[3];
+                let emptyInputs = Array.from(inputs).filter(input => input.value === '');
+                
+                inputs.forEach(input => {
+                    if (input.value === "") {
+                        input.classList.add('invalid');
+                    } else {
+                        input.classList.remove('invalid');
+                    }
+                });
+                
+                if(!checkBox.checked) {
+                    checkBox.classList.add("invalid");
+                    console.log('no checkBox')
+                    return false;
+                } else {
+                    checkBox.classList.remove("invalid");
+                }
+                
+                if (emptyInputs.length !== 0) {
+                    console.log('no input')
+                    return false;
+                }
+                
+                console.log("Check")
+                modal.style.display = 'none';
+                document.querySelector(".popup-success").style.display = 'flex';
+                return false;
+            }
+
+        }
 
         modalOpen.forEach(item => {
-            item.addEventListener('click', (e) => {
-                // e.
-                // e.stopPropagation();
+            item.addEventListener('click', () => {
                 document.body.style.overflow = 'hidden';
                 modal.style.display = 'flex';
             });
@@ -262,9 +297,12 @@ window.addEventListener('DOMContentLoaded', () => {
                 document.body.style.overflow = 'visible';
                 modal.style.display = 'none';
             }
-        })
+        });
     };
-    popup(".popup", "[data-popup]", ".popup_close");
+
+    popup(".popup", "[data-popup]", ".popup_close", ".popup_form_button", ".popup_form");
+    // popup(".popup-success", ".popup_form_button", ".popup-success_close");
+    popup(".popup-success", 'none', ".popup-success_close");
     
     if (window.screen.width >= 992) {
         slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",

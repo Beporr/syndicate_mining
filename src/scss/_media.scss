@@ -680,4 +680,21 @@
             }
         }
     }
+
+    .popup-success {
+        &_container {
+            padding: 76px 0 97px 0;
+        }
+
+        &_close {
+            width: 24px;
+            height: 24px;
+            top: 12px;
+            right: 12px;
+        }
+
+        &_text {
+            font-size: 12px;
+        }
+    }
 }
