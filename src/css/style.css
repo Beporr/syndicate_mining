@@ -247,6 +247,7 @@
   .popup_form_agreement input { min-width: 16px; width: 16px; height: 16px; padding: 0; }
   .popup_form_agreement input:checked:before { content: url("../icons/check_box_mobile.svg"); top: 0; left: 0; }
   .popup_form_agreement_descr { margin-top: 1px; font-size: 12px; line-height: 14px; }
+  .popup_form input.invalid[type="checkbox"]:after { top: 200%; font-size: 12px; color: red; }
   .popup-success_container { padding: 76px 0 97px 0; }
   .popup-success_close { width: 24px; height: 24px; top: 12px; right: 12px; }
   .popup-success_text { font-size: 12px; } }

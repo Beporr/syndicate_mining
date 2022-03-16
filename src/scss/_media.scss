@@ -678,6 +678,14 @@
                     line-height: 14px;
                 }
             }
+
+            input.invalid[type="checkbox"] {
+                &:after {
+                    top: 200%;
+                    font-size: 12px;
+                    color: red;                
+                }
+            }
         }
     }
 
