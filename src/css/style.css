@@ -48,16 +48,16 @@
 
 .seles { padding: 80px 0 76px 0; position: relative; }
 .seles .container { position: relative; }
-.seles_slider { position: relative; overflow: hidden; width: 1190px; height: 782px; }
+.seles_slider { position: relative; overflow: hidden; width: 1190px; }
 .seles_arrow-left { position: absolute; top: 50%; font-size: 54px; border: none; left: -40px; color: #929496; background: none; z-index: 10; }
 .seles_arrow-left[disabled] { color: #D3D3D3; cursor: not-allowed; }
 .seles_arrow-right { position: absolute; top: 50%; font-size: 54px; border: none; right: -40px; color: #929496; background: none; z-index: 10; }
 .seles_arrow-right[disabled] { color: #D3D3D3; cursor: not-allowed; }
 .seles .container { padding: 0; }
-.seles_wrapper { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; padding-bottom: 10px; left: 0; -webkit-transition: all 1s; transition: all 1s; }
+.seles_wrapper { display: -webkit-box; display: -ms-flexbox; display: flex; position: absolute; padding-bottom: 20px; left: 0; top: 0; -webkit-transition: all 1s; transition: all 1s; margin: 0; }
 .seles_title { font-style: normal; font-weight: 400; font-size: 36px; text-align: center; color: #000000; margin-bottom: 40px; }
-.seles_item { padding: 42px 40px 20px 40px; margin-right: 32px; background: #D3D3D3; -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25); border-radius: 20px; width: 570px; height: 764px; }
-.seles_item_img { display: block; margin: 0 auto; margin-bottom: 26px; }
+.seles_item { padding: 42px 40px 20px 40px; margin-right: 32px; background: #D3D3D3; -webkit-box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25); box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25); border-radius: 20px; width: 570px; }
+.seles_item_img { display: block; margin: 0 auto; width: 300px; margin-bottom: 26px; }
 .seles_item_title { font-style: normal; font-weight: bold; font-size: 24px; color: #000000; margin-bottom: 15px; }
 .seles_item_descr p { font-style: normal; font-weight: normal; font-size: 16px; line-height: 32px; color: #000000; margin-bottom: 11px; }
 .seles_item_btn { width: 200px; height: 36px; margin: 0 auto; border: 1px solid #000000; -webkit-box-sizing: border-box; box-sizing: border-box; border-radius: 42px; font-style: normal; font-weight: normal; font-size: 16px; color: #000000; }
@@ -131,9 +131,9 @@
   .service_item:first-child { margin-bottom: 24px; }
   .seles { padding: 60px 20px; }
   .seles .container { max-width: 768px; }
-  .seles_slider { width: 745px; height: 525px; overflow: hidden; }
+  .seles_slider { width: 745px; overflow: hidden; }
   .seles_arrow-right { right: -15px; }
-  .seles_item { width: 352px; height: 507px; padding: 16px 25px 20px 25px; margin-right: 24px; }
+  .seles_item { width: 352px; padding: 16px 25px 20px 25px; margin-right: 24px; }
   .seles_item_img { width: 190px; }
   .seles_item_title { font-size: 16px; margin-bottom: 8px; }
   .seles_item_descr { margin-bottom: 12px; }
@@ -216,8 +216,8 @@
   .service_item:last-child { margin: 0; }
   .seles { padding: 40px 0px; }
   .seles_title { font-size: 14px; margin-bottom: 16px; }
-  .seles_slider { margin: 0 auto; width: 300px; height: 468px; padding: 0 20px; overflow: hidden; }
-  .seles_item { width: 280px; height: 450px; border-radius: 12px; padding: 28px 8px 22px; }
+  .seles_slider { margin: 0 auto; width: 300px; padding: 0 20px; overflow: hidden; }
+  .seles_item { width: 280px; border-radius: 12px; padding: 28px 8px 22px; }
   .seles_item_img { width: 160px; margin-bottom: 16px; }
   .seles_item_title { font-size: 12px; }
   .seles_item_descr p { font-size: 10px; }

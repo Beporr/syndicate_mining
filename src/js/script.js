@@ -71,8 +71,12 @@ window.addEventListener('DOMContentLoaded', () => {
         const sliderNext = document.querySelector(btnNextSelector);
         const sliderPre = document.querySelector(btnPreSelector);
         const sliderNav = document.querySelector(sliderNavSelector);
-        
+        // console.log(sliderLine.offsetHeight);
+
+        // sliderLine.parentNode.style.height = sliderLine.scrollHeight + 20 + "px";
         let count = 0;
+        // console.log(sliderLine.offsetHeight);
+
 
         removeSliderNav();
         createSliderNav();        
@@ -101,10 +105,19 @@ window.addEventListener('DOMContentLoaded', () => {
             toggleActiveSlide();
         });
         sliderNavigation();
+        setTimeout(() => {
+            sliderLine.parentNode.style.height = sliderLine.scrollHeight + 20 + "px";
+        }, 10);
+        console.log(sliderLine.scrollHeight)
     };
 
     const sliderSwiper = (sliderSelector, sliderLineSelector, sliderItemSelector,
           sliderNavSelector, sliderNavItemClass, countShowSlids) => {
+        function removeSliderNav() {
+            while (sliderNav.firstChild) {
+                sliderNav.firstChild.remove();
+            }
+        }
 
         function createSliderNav() {
             for (let i=0; i < sliderItems.length/countShowSlids; i++) {
@@ -158,8 +171,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleTouchStart(event) {
-            // event.preventDefault();
-            // event.stopPropagation();
             const firstTouch = event.touches[0];
 
             startPositionTouch = firstTouch.clientX;
@@ -167,9 +178,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleTouchMove(event) {
-            // event.preventDefault();
-            // event.stopPropagation();
-
             if (!startPositionTouch) {
                 return false;
             }
@@ -188,8 +196,6 @@ window.addEventListener('DOMContentLoaded', () => {
         }
 
         function handleTouchEnd(event) {
-            // event.preventDefault();
-            // event.stopPropagation();
             const sliderNavItems = sliderNav.querySelectorAll("." + sliderNavItemClass);
             const showSlideWidth = sliderLine.offsetWidth/sliderNavItems.length;
             
@@ -215,13 +221,15 @@ window.addEventListener('DOMContentLoaded', () => {
               sliderNav = document.querySelector(sliderNavSelector),
               sliderItems = document.querySelectorAll(sliderItemSelector);
 
-        
+        // sliderLine.parentNode.style.height = sliderLine.offsetHeight * 1.4 + 20 + "px";
+
         let startPositionTouch = null;
         let position = 0;
         let PositionTouch = 0;
         let PositionTouchDiff =  0;
         let arrPositionTouchDiff = [0];
-        
+
+        removeSliderNav();
         createSliderNav();
         sliderNavigation();
         toggleActiveSlide();
@@ -308,7 +316,9 @@ window.addEventListener('DOMContentLoaded', () => {
     if (window.screen.width >= 992) {
         slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
                "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
-    }
+    
+        slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
+        "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);        }
 
     if (window.screen.width < 992 && window.screen.width >= 768) {
         sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
@@ -322,4 +332,23 @@ window.addEventListener('DOMContentLoaded', () => {
                      ".seles_slider-nav", "seles_slider-nav_item", 1);
     }
 
+
+    window.addEventListener("resize", () => {
+        if (window.screen.width >= 992) {
+            slider(".seles_wrapper", ".seles_item", ".seles_slider-nav",
+                   "seles_slider-nav_item", ".seles_arrow-left", ".seles_arrow-right", 2);
+        }
+    
+        if (window.screen.width < 992 && window.screen.width >= 768) {
+            sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
+                         ".seles_slider-nav", "seles_slider-nav_item", 2);
+        }
+    
+        if (window.screen.width < 768) {
+            sliderSwiper(".advantage_slider", ".advantage_wrapper", ".advantage_item",
+                         ".advantage_slider-nav", "advantage_slider-nav_item", 2);
+            sliderSwiper(".seles_slider", ".seles_wrapper", ".seles_item",
+                         ".seles_slider-nav", "seles_slider-nav_item", 1);
+        }
+    })
 });

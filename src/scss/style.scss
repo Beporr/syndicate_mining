@@ -251,8 +251,9 @@ $active_color: #929496;
     &_slider {
         position: relative;
         overflow: hidden;
+        // overflow-y: scroll;
         width: 1190px;
-        height: 782px;
+        // min-height: 782px;
     }
 
     &_arrow-left {
@@ -293,10 +294,13 @@ $active_color: #929496;
 
     &_wrapper {
         display: flex;
+        // align-items: start;
         position: absolute;
-        padding-bottom: 10px;
+        padding-bottom: 20px;
         left: 0;
+        top: 0;
         transition: all 1s;
+        margin: 0;
     }
 
     &_title {
@@ -315,11 +319,12 @@ $active_color: #929496;
         box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
         border-radius: 20px;
         width: 570px;
-        height: 764px;
+
 
         &_img {
             display: block;
             margin: 0 auto;
+            width: 300px;
             margin-bottom: 26px;
         }
 
